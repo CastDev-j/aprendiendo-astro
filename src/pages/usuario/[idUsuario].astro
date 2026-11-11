@@ -1,0 +1,18 @@
+---
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (() => {
+  const usuarios = Array.from({ length: 10 }, (_, i) => i + 1);
+  const paths = usuarios.map((idUsuario) => ({
+    params: { idUsuario: idUsuario.toString() },
+    props: { idUsuario, content: `Contenido ${idUsuario}` },
+  }));
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { idUsuario, content } = Astro.props;
+---
+
+<p>Client ID: {idUsuario}</p>
+<p>Content: {content}</p>

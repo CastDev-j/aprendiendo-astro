@@ -1,0 +1,23 @@
+---
+import type { Ruta } from "@/config";
+
+interface Props {
+  pathActual: string;
+  rutas: Ruta[];
+  className?: string;
+}
+
+const { pathActual, rutas, className } = Astro.props;
+---
+
+<ul class={`${className} flex justify-center items-center mx-0 w-full gap-4`}>
+  {
+    rutas.map(({ nombre, path }) => (
+      <li
+        class={pathActual === path ? "underline font-bold" : "hover:underline"}
+      >
+        <a href={path}>{nombre}</a>
+      </li>
+    ))
+  }
+</ul>

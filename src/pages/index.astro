@@ -1,11 +1,16 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Contenido from "@/components/Contenido.astro";
+import LayoutSecundaria from "@/layouts/LayoutSecundaria.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const searchParams = Astro.url.searchParams;
+
+const cantidad = searchParams.get("cantidad") || 1;
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<LayoutSecundaria titulo="Inicio" fondo="bg-indigo-200">
+  <main class="flex flex-1">
+    <Contenido server:defer cantidad={+cantidad}>
+        <div class="bg-emerald-200 w-screen h-48" slot="fallback"></div>
+    </Contenido>
+  </main>
+</LayoutSecundaria>

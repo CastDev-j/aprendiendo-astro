@@ -1,0 +1,15 @@
+---
+import { sleep } from "@/lib/sleep";
+
+await sleep(1000);
+
+interface Props {
+    cantidad?: number;
+}
+
+const {cantidad} = Astro.props;
+---
+
+<div class="bg-rose-200 w-screen h-48 flex items-center justify-center text-4xl">
+    {cantidad}
+</div>

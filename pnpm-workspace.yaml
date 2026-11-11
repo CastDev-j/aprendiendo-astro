@@ -1,2 +1,10 @@
+allowBuilds:
+  esbuild: set this to true or false
+  workerd: true
 minimumReleaseAgeExclude:
   - astro@7.4.8
+  - '@astrojs/react@7.1.5'
+  - '@astrojs/cloudflare@14.4.7'
+  - '@astrojs/internal-helpers@0.13.2'
+  - miniflare@5.20261110.1-beta
+  - wrangler@4.160.1

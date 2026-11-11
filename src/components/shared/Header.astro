@@ -1,0 +1,15 @@
+---
+import Rutas from "@/components/Rutas.astro";
+import { rutas } from "@/config";
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+const pathActual = Astro.routePattern;
+---
+
+<header class={`${className} flex w-screen h-12`}>
+  <Rutas {rutas} {pathActual} />
+</header>

@@ -1,0 +1,11 @@
+---
+export const prerender = false;
+import LayoutSecundaria from "@/layouts/LayoutSecundaria.astro";
+import { sleep } from "@/lib/sleep";
+
+await sleep(1000);
+---
+
+<LayoutSecundaria titulo="Secundaria" fondo="bg-emerald-200">
+  <main class="flex flex-1"></main>
+</LayoutSecundaria>

@@ -1,0 +1,18 @@
+---
+import Footer from "@/components/shared/Footer.astro";
+import Header from "@/components/shared/Header.astro";
+import LayoutPrincipal from "./LayoutPrincipal.astro";
+
+interface Props {
+  titulo: string;
+  fondo?: string;
+}
+
+const { titulo, fondo } = Astro.props;
+---
+
+<LayoutPrincipal {titulo}>
+  <Header className={fondo} />
+  <slot />
+  <Footer className={fondo} />
+</LayoutPrincipal>
